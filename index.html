@@ -2,14 +2,18 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>玩了mei</title>
+  <!-- 修正：加入 viewport-fit=cover 讓網頁背景滿版延伸到 iPhone 瀏海與底部橫條 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>玩了mei · 越南</title>
 
+  <!-- App 主畫面圖示設定 -->
   <link rel="apple-touch-icon" href="https://i.ibb.co/G3d81dq0/IMG-2963.jpg">
   <link rel="apple-touch-icon-precomposed" href="https://i.ibb.co/G3d81dq0/IMG-2963.jpg">
   <link rel="icon" type="image/png" href="https://i.ibb.co/G3d81dq0/IMG-2963.jpg">
 
+  <!-- iOS 獨立 APP 模式核心設定 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- 修正：改成 black-translucent 狀態欄才會變成透明，背景圖才會完美滿版 -->
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="玩了mei">
 
@@ -26,7 +30,8 @@
       background-attachment: fixed !important;
       color: #ffffff;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      padding: 20px 12px;
+      /* 修正：padding-top 增加安全距離，避免文字被 iPhone 的時間與瀏海擋到 */
+      padding: calc(20px + env(safe-area-inset-top)) 12px calc(20px + env(safe-area-inset-bottom)) 12px;
     }
     
     .container {
@@ -122,4 +127,3 @@
   </script>
 </body>
 </html>
-
